@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
-#include <sstream>
 #include <ctime>
-#include <iomanip>
 using namespace std;
 
 int main() {
@@ -11,8 +9,7 @@ int main() {
 
     // 입력받은 기준 날짜를 파싱하여 각각의 구성 요소로 나눕니다.
     tm tm_base = {};
-    istringstream date_stream_base(date_string);
-    date_stream_base >> get_time(&tm_base, "%Y-%m-%d");
+    strptime(date_string.c_str(), "%Y-%m-%d", &tm_base);
 
     int base_year = tm_base.tm_year + 1900;
     int base_month = tm_base.tm_mon + 1;
@@ -27,8 +24,7 @@ int main() {
         // 새로운 날짜를 입력받아 파싱합니다.
         cin >> date_string;
         tm tm_other = {};
-        istringstream date_stream_other(date_string);
-        date_stream_other >> get_time(&tm_other, "%Y-%m-%d");
+        strptime(date_string.c_str(), "%Y-%m-%d", &tm_other);
 
         int ot_year = tm_other.tm_year + 1900;
         int ot_month = tm_other.tm_mon + 1;
@@ -38,9 +34,9 @@ int main() {
         if (ot_year > base_year || (ot_year == base_year && ot_month > base_month) || (ot_year == base_year && ot_month == base_month && ot_day > base_day)) {
             count++;
         }
-        else if(ot_year==year &&ot_month==month &&ot_day ==day)
+        else if(ot_year == base_year && ot_month == base_month && ot_day == base_day)
         {
-            cout++;
+            count++;
         }
     }
 
