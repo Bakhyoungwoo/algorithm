@@ -1,48 +1,53 @@
 fun heapSort(arr: IntArray) {
     val n = arr.size
 
-    // 힙을 구성
+    // 최소 힙 구축
     for (i in n / 2 - 1 downTo 0) {
         heapify(arr, n, i)
     }
 
-    // 힙에서 원소를 하나씩 꺼내 정렬
-    for (i in n - 1 downTo 1) {
-        // 최대값인 루트 노드와 마지막 노드를 교환
+    // 하나씩 추출하여 정렬
+    for (i in n - 1 downTo 0) {
+        // 현재 최솟값을 배열 끝으로 이동
         val temp = arr[0]
         arr[0] = arr[i]
         arr[i] = temp
 
-        // 힙을 다시 구성
+        // 축소된 힙에 대해 다시 최소 힙 구축
         heapify(arr, i, 0)
     }
 }
 
+// 주어진 노드를 루트로 하는 서브트리를 최소 힙으로 만드는 함수
 fun heapify(arr: IntArray, n: Int, i: Int) {
-    var largest = i
+    var smallest = i // 가장 작은 값의 인덱스
     val left = 2 * i + 1
     val right = 2 * i + 2
 
-    // 왼쪽 자식이 부모보다 크면 largest를 왼쪽 자식으로 설정
-    if (left < n && arr[left] > arr[largest]) {
-        largest = left
+    // 왼쪽 자식이 현재 노드보다 작다면
+    if (left < n && arr[left] < arr[smallest]) {
+        smallest = left
     }
 
-    // 오른쪽 자식이 largest보다 크면 largest를 오른쪽 자식으로 설정
-    if (right < n && arr[right] > arr[largest]) {
-        largest = right
+    // 오른쪽 자식이 현재 노드보다 작다면
+    if (right < n && arr[right] < arr[smallest]) {
+        smallest = right
     }
 
-    // largest가 부모가 아니라면 largest와 부모를 교환하고 힙을 다시 구성
-    if (largest != i) {
+    // 가장 작은 값이 현재 노드가 아니라면 위치 변경
+    if (smallest != i) {
         val swap = arr[i]
-        arr[i] = arr[largest]
-        arr[largest] = swap
-        heapify(arr, n, largest)
+        arr[i] = arr[smallest]
+        arr[smallest] = swap
+
+        // 재귀적으로 서브 트리에 대해 힙 구축
+        heapify(arr, n, smallest)
     }
 }
+
 fun main() {
-    val arr = intArrayOf(4, 10, 3, 5, 1)
+    val arr = intArrayOf(12, 11, 13, 5, 6, 7)
+    println("Original array: ${arr.contentToString()}")
     heapSort(arr)
-    println("정렬된 배열: ${arr.contentToString()}")
+    println("Sorted array: ${arr.contentToString()}")
 }
