@@ -20,8 +20,8 @@ fun minHeapify(arr: IntArray, n: Int, i: Int) {
     }
 }
 
-// Max Heap Sort 함수
-fun maxHeapSort(arr: IntArray) {
+
+fun minHeapSort(arr: IntArray) {
     val n = arr.size
 
     // Max Heap 만들기
@@ -44,6 +44,6 @@ fun main() {
     val arr = intArrayOf(4, 10, 3, 5, 1)
 
     println("정렬 전: ${arr.contentToString()}")
-    maxHeapSort(arr)
+    minHeapSort(arr)
     println("정렬 후: ${arr.contentToString()}")
 }
