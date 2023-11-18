@@ -1,9 +1,9 @@
-fun heapSort(arr: IntArray) {
+fun maxheapSort(arr: IntArray) {
     val n = arr.size
 
     // 최소 힙 구축
     for (i in n / 2 - 1 downTo 0) {
-        heapify(arr, n, i)
+        maxheapify(arr, n, i)
     }
 
     // 하나씩 추출하여 정렬
@@ -14,12 +14,12 @@ fun heapSort(arr: IntArray) {
         arr[i] = temp
 
         // 축소된 힙에 대해 다시 최소 힙 구축
-        heapify(arr, i, 0)
+        maxheapify(arr, i, 0)
     }
 }
 
 // 주어진 노드를 루트로 하는 서브트리를 최소 힙으로 만드는 함수
-fun heapify(arr: IntArray, n: Int, i: Int) {
+fun maxheapify(arr: IntArray, n: Int, i: Int) {
     var smallest = i // 가장 작은 값의 인덱스
     val left = 2 * i + 1
     val right = 2 * i + 2
@@ -41,13 +41,13 @@ fun heapify(arr: IntArray, n: Int, i: Int) {
         arr[smallest] = swap
 
         // 재귀적으로 서브 트리에 대해 힙 구축
-        heapify(arr, n, smallest)
+        maxheapify(arr, n, smallest)
     }
 }
 
 fun main() {
     val arr = intArrayOf(12, 11, 13, 5, 6, 7)
-    println("Original array: ${arr.contentToString()}")
-    heapSort(arr)
-    println("Sorted array: ${arr.contentToString()}")
+    println("정렬 전: ${arr.contentToString()}")
+    maxheapSort(arr)
+    println("정렬 후: ${arr.contentToString()}")
 }
