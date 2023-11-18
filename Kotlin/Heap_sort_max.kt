@@ -1,7 +1,7 @@
 fun maxheapSort(arr: IntArray) {
     val n = arr.size
 
-    // 최소 힙 구축
+    //최대 힙 만들기
     for (i in n / 2 - 1 downTo 0) {
         maxheapify(arr, n, i)
     }
@@ -13,12 +13,12 @@ fun maxheapSort(arr: IntArray) {
         arr[0] = arr[i]
         arr[i] = temp
 
-        // 축소된 힙에 대해 다시 최소 힙 구축
+        // 반복
         maxheapify(arr, i, 0)
     }
 }
 
-// 주어진 노드를 루트로 하는 서브트리를 최소 힙으로 만드는 함수
+// 주어진 노드를 루트로 하는 서브트리를 최대 힙으로 만드는 함수
 fun maxheapify(arr: IntArray, n: Int, i: Int) {
     var smallest = i // 가장 작은 값의 인덱스
     val left = 2 * i + 1
