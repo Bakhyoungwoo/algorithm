@@ -5,8 +5,8 @@
   * 2024년 6월 28일 ~ 2024년 8월 30일
   * 화요일, 금요일 8시
     
-* 멤버
-* |제목|내용|설명|
+---
+### 멤버
   |박형우|이채운|안제원| 
   |dlcodns(https://github.com/dlcodns)|inno6734@gmail.com|Bakhyoungwoo(https://github.com/Bakhyoungwoo)|
 
