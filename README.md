@@ -7,8 +7,8 @@
     
 ---
 ### 멤버
-  |박형우|이채운|안제원| 
-  |dlcodns(https://github.com/dlcodns)|inno6734@gmail.com|Bakhyoungwoo(https://github.com/Bakhyoungwoo)|
+  | 박형우 | 이채운 | 안제원 | 
+  | https://github.com/dlcodns | inno6734@gmail.com | https://github.com/Bakhyoungwoo |
 
 ---
 ### 진행 방식
