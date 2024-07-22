@@ -6,6 +6,7 @@
   * 화요일, 금요일 8시
     
 * 멤버
+* |제목|내용|설명|
   |박형우|이채운|안제원| 
   |dlcodns(https://github.com/dlcodns)|inno6734@gmail.com|Bakhyoungwoo(https://github.com/Bakhyoungwoo)|
 
