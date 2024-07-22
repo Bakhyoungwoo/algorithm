@@ -1,6 +1,8 @@
-## 알고리즘 공부 및 스터디
+## 알고리즘 개인 공부 및 스터디
+
 * 알고리즘 공부 기간
   * 시간 될때 마다 진행
+    
 * 스터디 기간
   * 2024년 6월 28일 ~ 2024년 8월 30일
   * 화요일, 금요일 8시
@@ -8,9 +10,9 @@
 ---
 ### 멤버
 
-  | 박형우 | 이채운 | 안제원 | 
+  | 박형우 | 안제원 | 이채운 | 
   | ------------ | ------------- | ------------- |
-  | https://github.com/dlcodns | inno6734@gmail.com | https://github.com/Bakhyoungwoo |
+  | https://github.com/Bakhyoungwoo | inno6734@gmail.com | https://github.com/dlcodns |
 
 ---
 ### 진행 방식
